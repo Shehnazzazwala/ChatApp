@@ -12,10 +12,13 @@ from styles import load_css
 from themes import THEMES
 import io
 from crypto import decrypt_bytes
+from database import create_tables # <--- 1. IMPORT THE FUNCTION
+
+create_tables() # <--- 2. CALL THE FUNCTION TO ENSURE TABLES ARE CREATED
 
 
 # --- Page Configuration ---
-st.set_page_config(page_title="Happy Chat", page_icon="😊", layout="centered")
+st.set_page_config(page_title="ChatApp", page_icon="😊", layout="centered")
 st_autorefresh(interval=2000, key="data_refresher")
 
 def main():
